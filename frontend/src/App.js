@@ -14,13 +14,13 @@ function App() {
   const [chartView, setChartView] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/data").then(res => {
+    axios.get("https://stock-market-dashboard-x1au.onrender.com/data").then(res => {
       setCompanies(res.data);
     });
   }, []);
 
   const fetchStockData = (ticker) => {
-    axios.get(`http://localhost:3002/history/${ticker}`).then(res => {
+    axios.get(`https://stock-market-dashboard-x1au.onrender.com/history/${ticker}`).then(res => {
       setStockData(res.data);
       setSelected(ticker);
     });
